@@ -1,0 +1,26 @@
+{
+  "name": "@order-processing/notification-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@order-processing/notification-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/notification-service-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@order-processing/notification-service:build",
+          "@order-processing/notification-service:serve"
+        ]
+      }
+    }
+  }
+}

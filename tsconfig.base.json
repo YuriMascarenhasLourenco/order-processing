@@ -16,6 +16,12 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@order-processing/source"]
-  }
+    "customConditions": ["@order-processing/source"],
+       "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["shared/*"]
+    }
+  },
+   "include": ["apps/**/*", "shared/**/*", "libs/**/*"]
 }
+

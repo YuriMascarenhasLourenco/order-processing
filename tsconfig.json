@@ -8,6 +8,24 @@
     },
     {
       "path": "./apps/order-processing"
+    },
+    {
+      "path": "./apps/api-gateway-e2e"
+    },
+    {
+      "path": "./apps/api-gateway"
+    },
+    {
+      "path": "./apps/payment-service-e2e"
+    },
+    {
+      "path": "./apps/payment-service"
+    },
+    {
+      "path": "./apps/notification-service-e2e"
+    },
+    {
+      "path": "./apps/notification-service"
     }
   ]
 }
