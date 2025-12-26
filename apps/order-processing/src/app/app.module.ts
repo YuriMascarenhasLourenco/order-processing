@@ -15,6 +15,19 @@ import path from 'path';
       path.resolve(process.cwd(), 'apps/order-processing/.env')
     ],
     isGlobal: true
+  }),TypeOrmModule.forRootAsync({
+    imports: [ConfigModule],
+    inject: [ConfigService],
+    useFactory: (config: ConfigService) => ({
+      type: config.getOrThrow<string>('DB_TYPE') as 'postgres' ,
+      host: config.getOrThrow<string>('DB_HOST'),
+      port: config.getOrThrow<number>('DB_PORT'),
+      username: config.getOrThrow<string>('DB_USERNAME'),
+      password: config.getOrThrow<string>('DB_PASSWORD'),
+      database: config.getOrThrow<string>('DB_NAME'),
+      entities: [OrderStatusHistoryOrmEntity],
+      synchronize: true,
+    }),
   }), ClientsModule.registerAsync([{
     name: PAYMENT_CLIENT,
     inject: [ConfigService],
